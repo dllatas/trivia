@@ -3,7 +3,7 @@ const Roll = require('./roll');
 const Question = require('./question');
 const { outputEmitter } = require('./output');
 
-const main = (players) => {
+const game = (players) => {
 
   if (!Player.enough(players)) {
     outputEmitter.emit('noPlayers');
@@ -52,6 +52,6 @@ const main = (players) => {
   }
 }
 
-const players = ['Chet', 'Pat', 'Sue'];
-
-main(players);
+module.exports = {
+  game,
+}
