@@ -6,6 +6,12 @@ const QUESTION = 'Question';
 const ANSWER_DOMAIN = 10;
 const WRONG_ANSWER = 7;
 
+const generateCategoryCounter = () => CATEGORIES
+  .reduce((count, category) => {
+    count[category] = 0;
+    return count;
+  }, {});
+
 const choose = (place) => {
   const category = place % NUMBER_CATEGORIES;
   return CATEGORIES[category];
@@ -37,8 +43,9 @@ const isCorrect = () => {
   return false;
 }; 
 
+
 module.exports = {
-  CATEGORIES,
+  generateCategoryCounter,
   ask,
-  isCorrect
+  isCorrect,
 }
