@@ -4,14 +4,20 @@
   "description": "Test with node.js =====================",
   "main": "game.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "mocha src/**/*.spec.js"
+    "start": "NODE_ENV=dev node index.js",
+    "test": "NODE_ENV=test nyc mocha src/**/*.spec.js",
+    "lint": "eslint src",
+    "lint-fix": "eslint --fix src"
   },
   "author": "",
   "license": "GPL v3",
   "dependencies": {},
   "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "mocha": "^5.2.0",
-    "should": "^13.2.1"
+    "nyc": "^14.1.1"
   }
 }
