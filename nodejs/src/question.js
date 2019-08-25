@@ -15,7 +15,7 @@ const generateCategoryCounter = () => CATEGORIES
 const choose = (place) => {
   const category = place % NUMBER_CATEGORIES;
   return CATEGORIES[category];
-}
+};
 
 const formulate = (category, index) => `${category} ${QUESTION} ${index}`;
 
@@ -30,22 +30,28 @@ const ask = (place, count) => {
     index,
     category,
   };
-}
+};
+
+const getAnswer = () => Math.floor(Math.random() * ANSWER_DOMAIN);
 
 // The question is wrong if a random number between 0 and 9 is equal to 7
-const isCorrect = () => {
-  const answer = Math.floor(Math.random() * ANSWER_DOMAIN); 
+const isCorrect = (answer) => {
   if (answer !== WRONG_ANSWER) {
     outputEmitter.emit('correctAnswer');
     return true;
   }
   outputEmitter.emit('wrongAnswer');
   return false;
-}; 
+};
 
 
 module.exports = {
+  CATEGORIES,
+  WRONG_ANSWER,
   generateCategoryCounter,
+  choose,
+  formulate,
   ask,
   isCorrect,
-}
+  getAnswer,
+};

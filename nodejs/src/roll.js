@@ -10,14 +10,14 @@ const start = () => {
   const roll = Math.ceil(pseudo);
   outputEmitter.emit('roll', roll);
   return roll;
-}
+};
 
 const isOdd = (roll) => {
   if (roll % 2 === 1) {
     return true;
   }
   return false;
-}
+};
 
 module.exports = {
   start,
