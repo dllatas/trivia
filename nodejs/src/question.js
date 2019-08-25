@@ -1,6 +1,8 @@
 const CATEGORIES = ['Pop', 'Science', 'Sports', 'Rock'];
 const NUMBER_CATEGORIES = CATEGORIES.length;
 const QUESTION = 'Question';
+const RIGHT_ANSWER_DOMAIN = 10;
+const RIGHT_ANSWER = 7;
 
 const choose = (place) => {
   const category = place % NUMBER_CATEGORIES;
@@ -20,7 +22,11 @@ const ask = (place, count) => {
   };
 }
 
+// The question is correct if a random number between 0 and 9 is equal to 7
+const isCorrect = () => Math.floor(Math.random() * RIGHT_ANSWER_DOMAIN) === RIGHT_ANSWER;
+
 module.exports = {
   CATEGORIES,
-  ask
+  ask,
+  isCorrect
 }
