@@ -1,6 +1,6 @@
 # Legacy Code Retreat
 
-During my time in Blocket, I found myself looking up at a book by Michael Feathers, "Working effectively with Legacy Code". One of the main ideas in the book is to write enough test to the legacy code before adding new eatures, so one avoids changing the code's behaviour and introducing new bugs. However, for this small codebase, I decided to understand the code and write a modular version. 
+During my time in Blocket, I found myself looking up at a book by Michael Feathers, "Working effectively with Legacy Code". One of the main ideas in the book is to write enough tests to the legacy code before adding new features, so one avoids changing the code's behaviour and introducing new bugs. However, for this small codebase, I decided to understand the code and write a modular version. 
 
 ### Issues
 - No separation of concerns
@@ -20,9 +20,9 @@ During my time in Blocket, I found myself looking up at a book by Michael Feathe
 
 - Unused functions: Add AirBnb linting style!
 
-- Anti - patterns, syntax and semantics: Picking up a category based on the place ended up being less than 5 lines compared to an original messy "if-else" monster. Moreover, the for-loop inside the while made going to the next player for free. No more array checkings. Representing the players with an array of objects made it simpler to update several different arrays.
+- Anti - patterns, syntax and semantics: Picking up a category based on the place ended up being less than 5 lines compared to an original messy "if-else" monster. Moreover, the for-loop inside the while made going to the next player for free. No more array checkings. Representing the players with an array of objects made it simpler compared to update several different arrays for each player property.
 
-- Console printings everywhere: Implemented a module based on events that owns all the messages, and has a display functions. The event emitters were moved to their corresponding modules.
+- Console printings everywhere: Implemented a module based on events that owns all the messages, and has a display function. The event emitters were exported to different modules.
 
 - Magic numbers: Use constants instead in the modules. 
 
