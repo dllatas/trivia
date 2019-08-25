@@ -37,4 +37,3 @@ outputEmitter.on('wrongAnswer', () => display('Question was incorrectly answered
 module.exports = {
   outputEmitter
 }
-// myEmitter.emit('event', 'a', 'b');
